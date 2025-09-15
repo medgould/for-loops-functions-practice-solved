@@ -6,9 +6,20 @@
 
 export function concatArrays(arr1, arr2) {
   // Your code goes here...
+  const concatResult = [];
+  const concatSource1 = arr1;
+  const concatSource2 = arr2;
 
+  for (let i = 0; i < concatSource1.length; i++) {
+    concatResult.push(concatSource1[i]);
+  }
+  
+  for (let j = 0; j < concatSource2.length; j++) {
+    concatResult.push(concatSource2[j]);
+  } 
+  return concatResult;  
 }
-
+console.log(concatArrays(['d', 'r', 'a'], ['f', 'y']));
 
 
 // === TEST YOURSELF ===
