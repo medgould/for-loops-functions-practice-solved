@@ -7,9 +7,31 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
+  const namesWithA = [];
+  const namesWithoutA = [];
 
+  for (let i = 0; i < array.length; i++) {
+    let name = array[i];
+    let hasA = false;
+    
+    for (let j = 0; j < name.length; j++) { 
+      if (name[j].toLowerCase() === 'a') {
+        hasA = true;
+        break; 
+      }
+    }
+
+    if (hasA) {
+      namesWithA.push(name);
+    } else {
+      namesWithoutA.push(name);
+    }
+  }
+  return [namesWithA, namesWithoutA];
 }
 
+console.log(separateNamesWithAFromRest(["jon", "alice", "andrew", "mark", "jimmy"]));
+console.log(separateNamesWithAFromRest(["Bob", "Charlie", "David", "Eve"]));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-20"
